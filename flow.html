@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highlow取引フローチャート</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 400px;
+        }
+        .box {
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 150px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        .arrow {
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 50px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="step1">暗号通貨の選択</div>
+        <div class="arrow"></div>
+        <div class="box" id="step2">取引の設定</div>
+        <div class="arrow"></div>
+        <div class="box" id="step3">取引の実行</div>
+        <div class="arrow"></div>
+        <div class="box" id="step4">結果の確認</div>
+    </div>
+    <script>
+        const steps = ['暗号通貨の選択', '取引の設定', '取引の実行', '結果の確認'];
+        for (let i = 0; i < steps.length; i++) {
+            document.getElementById('step' + (i+1)).addEventListener('click', function() {
+                alert(`ステップ${i+1}: ${steps[i]}`);
+            });
+        }
+    </script>
+</body>
+</html>
